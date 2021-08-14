@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加邮件留言吧。。
+第一篇主要是讲一些环境准备和需要的软件。
+环境准备 在正式开始上手前，我们需要做一些环境准备，何谓“环境&amp;quot;？
+程序其实就像一种生物，鱼需要水，植物需要阳光，绝大部分动物都需要氧气，除了必备的生存条件之外还可以准备一些辅助的条件让生物更加满足，这些都可以称之为环境。这一部分主要是介绍搭建博客必要的环境，请准备好网络环境以及电脑。
+ git（必要，进行代码管理必不可少的工具） Github（必要，这篇教程主要就是借助github代码托管实现个人博客） Shell（Windows平台推荐WindowsTerminal）、 MarkDown编辑器（MarkDown是一种标记语言，写文章会用到） 善于思考的大脑和愿意付出行动的双手   Git的安装 Git简介 git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 维基百科
+上面这堆谜语来自wiki，举例说明吧。
+好比你装一台电脑，整个过程存在非常多的状态，甚至装完之后还需要升级维护之类的需求。如果中间出了问题就要拆掉已经装好的部分回到出错的状态重新来过，非常折磨！现在出现了这么一个工具，它可以记录下一个时空节点的所有信息，比如在你装好CPU，装好内存，装好显卡的每个结束时刻你都可以记录下这一时空节点，还可以带上一些你的辅助信息，说明为啥要记录这个节点以及在这个节点你都做了些什么。这样当你出现了什么问题的时候你可以快速的检查到底出啥问题了，甚至返回到之前的时空节点将其修复！是不是非常酷炫？这还不是最酷的，结合下文会讲到的Github，甚至可以做到让别人克隆你的时空节点记录，将他的时空记录和你的合并起来！真是令人激动。当然，Git的进一步使用就需要各位深入学习了，此处只是为了方便大家理解后面的命令都在做什么。
+Git的下载和安装 官网地址
+
+根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。
+安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。
+
+Github账号  Github简介 
+GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 维基百科
+wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。
+比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。
+网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。
+ 注册github账号 访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。
+接下来就是github的注册信息界面了，做的很漂亮，如果网络条件不好的话请多等待一下，或者挂上梯子再试试。这部分不予赘述，就是一个注册流程，也没啥限制的。
+完成注册后来到个人的首页。
+ 仓库说明 有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New
+
+命名规范就是，仓库名一定是你的用户名加上.github.io，这是GitHub解析用户界面的强制要求。其它选项保持默认就可以了，不用管。我这里报红是因为我已经有这个仓库了，各位应该不会有啥问题，建好仓库后先把它撂在这不管，还有一些准备工作要做。
+  Shell的准备 Shell的介绍 什么是Shell呢？计算机在早期的时候是没有这么多花花绿绿的界面让你来用的，所有的操作都是通过shell（终端）来完成的，比如复制一个文件到另一个目录这样简单的操作，就需要在一个黑黑的窗体里完成，各位也许在Windows里接触过这个黑窗体，没错，CMD其实也是一个Shell（终端）。
+那你可能会问，为啥不做一个界面出来呢，不是会方便很多吗？首先是图形化的界面消耗的资源比较高，在服务器上大家早就习惯了一套命令式的交互，没有必要去做一套费力又不咋讨好的图形界面，所以很多软件都是没有图形化界面的，包括系统也是，Linux这类服务器系统大部分都没有做图形化界面的，当然你可以自己安装图形界面。再者就是对于熟练的程序员来说使用命令交互比图形界面快多了，等待图形界面加载的时候就已经使用节约数十倍的资源占用的终端完成操作了。
+ 为什么要安装WindowsTerminal Windows的CMD不够用，丑（
+ 下载以及安装 有两种方式，最简单的，在开始菜单里打开你的Windows应用商店，搜索WindowsTerminal安装即可
+
+或者你可以来到这个仓库的发行地址下载WindowsTerminal，翻到页面底部，下载第一个文件，下载下来直接双击即可，这个我记得是UWP应用形式的。
+
+完成安装过后可以按下Win&#43;R打开运行窗口，输入wt回车即可打开Shell'><title>借助github以及hugo搭建静态的个人博客-0</title>
+
+<link rel='canonical' href='http://www.rmdarck18.xyz:1313/p/personal_blog/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='借助github以及hugo搭建静态的个人博客-0'>
+<meta property='og:description' content='此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加邮件留言吧。。
+第一篇主要是讲一些环境准备和需要的软件。
+环境准备 在正式开始上手前，我们需要做一些环境准备，何谓“环境&amp;quot;？
+程序其实就像一种生物，鱼需要水，植物需要阳光，绝大部分动物都需要氧气，除了必备的生存条件之外还可以准备一些辅助的条件让生物更加满足，这些都可以称之为环境。这一部分主要是介绍搭建博客必要的环境，请准备好网络环境以及电脑。
+ git（必要，进行代码管理必不可少的工具） Github（必要，这篇教程主要就是借助github代码托管实现个人博客） Shell（Windows平台推荐WindowsTerminal）、 MarkDown编辑器（MarkDown是一种标记语言，写文章会用到） 善于思考的大脑和愿意付出行动的双手   Git的安装 Git简介 git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 维基百科
+上面这堆谜语来自wiki，举例说明吧。
+好比你装一台电脑，整个过程存在非常多的状态，甚至装完之后还需要升级维护之类的需求。如果中间出了问题就要拆掉已经装好的部分回到出错的状态重新来过，非常折磨！现在出现了这么一个工具，它可以记录下一个时空节点的所有信息，比如在你装好CPU，装好内存，装好显卡的每个结束时刻你都可以记录下这一时空节点，还可以带上一些你的辅助信息，说明为啥要记录这个节点以及在这个节点你都做了些什么。这样当你出现了什么问题的时候你可以快速的检查到底出啥问题了，甚至返回到之前的时空节点将其修复！是不是非常酷炫？这还不是最酷的，结合下文会讲到的Github，甚至可以做到让别人克隆你的时空节点记录，将他的时空记录和你的合并起来！真是令人激动。当然，Git的进一步使用就需要各位深入学习了，此处只是为了方便大家理解后面的命令都在做什么。
+Git的下载和安装 官网地址
+
+根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。
+安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。
+
+Github账号  Github简介 
+GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 维基百科
+wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。
+比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。
+网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。
+ 注册github账号 访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。
+接下来就是github的注册信息界面了，做的很漂亮，如果网络条件不好的话请多等待一下，或者挂上梯子再试试。这部分不予赘述，就是一个注册流程，也没啥限制的。
+完成注册后来到个人的首页。
+ 仓库说明 有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New
+
+命名规范就是，仓库名一定是你的用户名加上.github.io，这是GitHub解析用户界面的强制要求。其它选项保持默认就可以了，不用管。我这里报红是因为我已经有这个仓库了，各位应该不会有啥问题，建好仓库后先把它撂在这不管，还有一些准备工作要做。
+  Shell的准备 Shell的介绍 什么是Shell呢？计算机在早期的时候是没有这么多花花绿绿的界面让你来用的，所有的操作都是通过shell（终端）来完成的，比如复制一个文件到另一个目录这样简单的操作，就需要在一个黑黑的窗体里完成，各位也许在Windows里接触过这个黑窗体，没错，CMD其实也是一个Shell（终端）。
+那你可能会问，为啥不做一个界面出来呢，不是会方便很多吗？首先是图形化的界面消耗的资源比较高，在服务器上大家早就习惯了一套命令式的交互，没有必要去做一套费力又不咋讨好的图形界面，所以很多软件都是没有图形化界面的，包括系统也是，Linux这类服务器系统大部分都没有做图形化界面的，当然你可以自己安装图形界面。再者就是对于熟练的程序员来说使用命令交互比图形界面快多了，等待图形界面加载的时候就已经使用节约数十倍的资源占用的终端完成操作了。
+ 为什么要安装WindowsTerminal Windows的CMD不够用，丑（
+ 下载以及安装 有两种方式，最简单的，在开始菜单里打开你的Windows应用商店，搜索WindowsTerminal安装即可
+
+或者你可以来到这个仓库的发行地址下载WindowsTerminal，翻到页面底部，下载第一个文件，下载下来直接双击即可，这个我记得是UWP应用形式的。
+
+完成安装过后可以按下Win&#43;R打开运行窗口，输入wt回车即可打开Shell'>
+<meta property='og:url' content='http://www.rmdarck18.xyz:1313/p/personal_blog/'>
+<meta property='og:site_name' content='DarckLH的Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-08-13T20:38:35&#43;08:00'/><meta property='article:modified_time' content='2021-08-13T20:38:35&#43;08:00'/><meta property='og:image' content='http://www.rmdarck18.xyz:1313/p/personal_blog/head.jpg' />
+<meta name="twitter:title" content="借助github以及hugo搭建静态的个人博客-0">
+<meta name="twitter:description" content="此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加邮件留言吧。。
+第一篇主要是讲一些环境准备和需要的软件。
+环境准备 在正式开始上手前，我们需要做一些环境准备，何谓“环境&amp;quot;？
+程序其实就像一种生物，鱼需要水，植物需要阳光，绝大部分动物都需要氧气，除了必备的生存条件之外还可以准备一些辅助的条件让生物更加满足，这些都可以称之为环境。这一部分主要是介绍搭建博客必要的环境，请准备好网络环境以及电脑。
+ git（必要，进行代码管理必不可少的工具） Github（必要，这篇教程主要就是借助github代码托管实现个人博客） Shell（Windows平台推荐WindowsTerminal）、 MarkDown编辑器（MarkDown是一种标记语言，写文章会用到） 善于思考的大脑和愿意付出行动的双手   Git的安装 Git简介 git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 维基百科
+上面这堆谜语来自wiki，举例说明吧。
+好比你装一台电脑，整个过程存在非常多的状态，甚至装完之后还需要升级维护之类的需求。如果中间出了问题就要拆掉已经装好的部分回到出错的状态重新来过，非常折磨！现在出现了这么一个工具，它可以记录下一个时空节点的所有信息，比如在你装好CPU，装好内存，装好显卡的每个结束时刻你都可以记录下这一时空节点，还可以带上一些你的辅助信息，说明为啥要记录这个节点以及在这个节点你都做了些什么。这样当你出现了什么问题的时候你可以快速的检查到底出啥问题了，甚至返回到之前的时空节点将其修复！是不是非常酷炫？这还不是最酷的，结合下文会讲到的Github，甚至可以做到让别人克隆你的时空节点记录，将他的时空记录和你的合并起来！真是令人激动。当然，Git的进一步使用就需要各位深入学习了，此处只是为了方便大家理解后面的命令都在做什么。
+Git的下载和安装 官网地址
+
+根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。
+安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。
+
+Github账号  Github简介 
+GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 维基百科
+wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。
+比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。
+网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。
+ 注册github账号 访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。
+接下来就是github的注册信息界面了，做的很漂亮，如果网络条件不好的话请多等待一下，或者挂上梯子再试试。这部分不予赘述，就是一个注册流程，也没啥限制的。
+完成注册后来到个人的首页。
+ 仓库说明 有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New
+
+命名规范就是，仓库名一定是你的用户名加上.github.io，这是GitHub解析用户界面的强制要求。其它选项保持默认就可以了，不用管。我这里报红是因为我已经有这个仓库了，各位应该不会有啥问题，建好仓库后先把它撂在这不管，还有一些准备工作要做。
+  Shell的准备 Shell的介绍 什么是Shell呢？计算机在早期的时候是没有这么多花花绿绿的界面让你来用的，所有的操作都是通过shell（终端）来完成的，比如复制一个文件到另一个目录这样简单的操作，就需要在一个黑黑的窗体里完成，各位也许在Windows里接触过这个黑窗体，没错，CMD其实也是一个Shell（终端）。
+那你可能会问，为啥不做一个界面出来呢，不是会方便很多吗？首先是图形化的界面消耗的资源比较高，在服务器上大家早就习惯了一套命令式的交互，没有必要去做一套费力又不咋讨好的图形界面，所以很多软件都是没有图形化界面的，包括系统也是，Linux这类服务器系统大部分都没有做图形化界面的，当然你可以自己安装图形界面。再者就是对于熟练的程序员来说使用命令交互比图形界面快多了，等待图形界面加载的时候就已经使用节约数十倍的资源占用的终端完成操作了。
+ 为什么要安装WindowsTerminal Windows的CMD不够用，丑（
+ 下载以及安装 有两种方式，最简单的，在开始菜单里打开你的Windows应用商店，搜索WindowsTerminal安装即可
+
+或者你可以来到这个仓库的发行地址下载WindowsTerminal，翻到页面底部，下载第一个文件，下载下来直接双击即可，这个我记得是UWP应用形式的。
+
+完成安装过后可以按下Win&#43;R打开运行窗口，输入wt回车即可打开Shell"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://www.rmdarck18.xyz:1313/p/personal_blog/head.jpg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="http://www.rmdarck18.xyz:1313" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/personal_blog/">
+                <img src="/p/personal_blog/head_hu0d41abcf2798df58867175abdd80ed1c_1163462_800x0_resize_q75_box.jpg"
+                        srcset="/p/personal_blog/head_hu0d41abcf2798df58867175abdd80ed1c_1163462_800x0_resize_q75_box.jpg 800w, /p/personal_blog/head_hu0d41abcf2798df58867175abdd80ed1c_1163462_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post 借助github以及hugo搭建静态的个人博客-0" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B%E5%88%86%E4%BA%AB/" style="background-color: #2a9d8f; color: #fff;">
+                教程分享
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/personal_blog/">借助github以及hugo搭建静态的个人博客-0</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 13, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p>此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加邮件留言吧。。</p>
+<p>第一篇主要是讲一些环境准备和需要的软件。</p>
+<h2 id="环境准备">环境准备</h2>
+<p>在正式开始上手前，我们需要做一些环境准备，何谓“环境&quot;？</p>
+<p>程序其实就像一种生物，鱼需要水，植物需要阳光，绝大部分动物都需要氧气，除了必备的生存条件之外还可以准备一些辅助的条件让生物更加满足，这些都可以称之为环境。这一部分主要是介绍搭建博客必要的环境，请准备好网络环境以及电脑。</p>
+<ol>
+<li>git（必要，进行代码管理必不可少的工具）</li>
+<li>Github（必要，这篇教程主要就是借助github代码托管实现个人博客）</li>
+<li>Shell（Windows平台推荐WindowsTerminal）、</li>
+<li>MarkDown编辑器（MarkDown是一种标记语言，写文章会用到）</li>
+<li>善于思考的大脑和愿意付出行动的双手</li>
+</ol>
+<hr>
+<h3 id="git的安装">Git的安装</h3>
+<h4 id="git简介">Git简介</h4>
+<p><!-- raw HTML omitted --></p>
+<p>git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 <a class="link" href="https://zh.wikipedia.org/zh-cn/Git"  target="_blank" rel="noopener"
+    >维基百科</a></p>
+<p>上面这堆谜语来自wiki，举例说明吧。</p>
+<p>好比你装一台电脑，整个过程存在非常多的状态，甚至装完之后还需要升级维护之类的需求。如果中间出了问题就要拆掉已经装好的部分回到出错的状态重新来过，非常折磨！现在出现了这么一个工具，它可以记录下一个时空节点的所有信息，比如在你装好CPU，装好内存，装好显卡的每个结束时刻你都可以记录下这一时空节点，还可以带上一些你的辅助信息，说明为啥要记录这个节点以及在这个节点你都做了些什么。这样当你出现了什么问题的时候你可以快速的检查到底出啥问题了，甚至返回到之前的时空节点将其修复！是不是非常酷炫？这还不是最酷的，结合下文会讲到的Github，甚至可以做到让别人克隆你的时空节点记录，将他的时空记录和你的合并起来！真是令人激动。当然，Git的进一步使用就需要各位深入学习了，此处只是为了方便大家理解后面的命令都在做什么。</p>
+<h4 id="git的下载和安装">Git的下载和安装</h4>
+<p><a class="link" href="https://git-scm.com/"  target="_blank" rel="noopener"
+    >官网地址</a></p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fsMJLq.png" alt="选择下载"  /></p>
+<p><a class="link" href="https://imgtu.com/i/fsQWBq"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fsQWBq.png" alt="fsQWBq.png"  /></a></p>
+<p>根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。</p>
+<p>安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。</p>
+<p><a class="link" href="https://imgtu.com/i/fslNPU"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fslNPU.png" alt="fslNPU.png"  /></a></p>
+<h3 id="github账号">Github账号</h3>
+<hr>
+<h4 id="github简介">Github简介</h4>
+<p><a class="link" href="https://www.google.com/search?q=github&amp;newwindow=1&amp;sxsrf=ALeKk01RkvU7wDBr6bJIViufne3czGa_CA:1628860226351&amp;tbm=isch&amp;source=iu&amp;ictx=1&amp;fir=AX0L-dlfxlIUiM%2CbubBm5TnvXiH4M%2C%2Fm%2F0ryppmg&amp;vet=1&amp;usg=AI4_-kSdwc918DJbXthiOoZoJM3C5MuDpg&amp;sa=X&amp;ved=2ahUKEwiqnLiZia7yAhVCfd4KHYx1DRgQ_B16BAh0EAI#imgrc=AX0L-dlfxlIUiM"  target="_blank" rel="noopener"
+    ><img src="/data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N/AABEIAIAAbAMBEQACEQEDEQH/xAAcAAACAwADAQAAAAAAAAAAAAAABgUHCAIDBAH/xABOEAABAgMDBQoJBwkJAQAAAAABAgMABAUGBxESITFBcRMUFzI3UWF0ocEiVYGDkZKTwuJWYnKj0dLhFRYjM0JFRqSxJENEUmOClKKyCP/EABoBAQEAAwEBAAAAAAAAAAAAAAAFAQQGAwL/xAAuEQEAAQEECAYCAwEAAAAAAAAAAQMCBAUREhUxQUKBocEhIlFS4fBikRMy0RT/2gAMAwEAAhEDEQA/AJGytmzaEzQE3vfcMn&#43;7ysrHHpHNHSXu9/8APl4Z5uVudz/6dLxyyMHBsfG38v8AFGlrWfZ1b&#43;po9/T5HBsfGp9h8UNaz7OpqaPf0&#43;RwbHxt9R8UNa/h1NTR7&#43;nyODY&#43;Nj7D4oa1/Dqamj39PkcGx8bH2HxQ1r&#43;HU1NHv6fI4Nj42PsPihrX8OpqaPf0&#43;RwbHxsfYfFDWv4dTU0e/p8jg2PjX6j4ozrafZ1Y1NHv6fI4Nz41&#43;o&#43;KGtp9nVnU0e/p8jg3Pjb6j4oxrWfZ1NTR7&#43;nyODY&#43;NT7D4oa1n2dTU0e/p8virtyEk/lX&#43;X&#43;KM62/DqxODfn0&#43;SFrO2LCGfrquNU/Ne9EfFeDn2XMG4&#43;XdU94NuLUU62tZk5KuTjMuzNKS22leZI5hEdcL3CLbH5Qz3r/AIQBwi2x&#43;UM96/4QBwi2x&#43;UM96/4QBwi2x&#43;UM96/4QBwjWx&#43;UM964&#43;yA5C8i2Q/iGc9I&#43;yA&#43;i8q2Y/iCb/6/ZAchebbQfxBNeqj7IDmL0bbD9/v&#43;zb&#43;7AfRepbcfv932LX3YC9roK3UrQWLE/WJpUzNGYcRuhSlOYYYDAACBKvDpO0x18bHEbz7dVxqn5r3okYrwc&#43;y3g3Hy7qFvQ5Qa91tUR1wrwBAStBs3WLQqmE0WRcm1S6N0dSgjFKdAzE59gzwEc8y6w6tp9tTbrailaFpIUkjSCDoMB1wBAEBMJsvXDQna7&#43;TH00tvDKmVDJSQSACMc6hiRnGIgIeAIDS9wXJ2Otvd0CSadJ2mOvjY4jefbquNU/Ne9EjFeDn2W8G4&#43;XdQt6HKDXutqiOuFeAIC9f/AJp3He9eAw3fLZyufJwXh24wDjeNdpI2zdl5pDqZGeQoJdmEt5Rdb5iM2JGowEZJ3G2UYbwmHKhMr1qU8E9iQIDvcuTscpJCWp1B50zJzekQEdTLjaPI2hYnHZ12cprQyjKTCRitY0ZShgCnnGGrWIByvJDLd39eS4EpbEisJGgA4eD24QGRIAgNL3BcnY6293QJJus7THXxscRvPt1XGqfmveiRivBz7LeDcfLuoW9DlBr3W1RHXCvAEBpK4iyaKNZxNafyjO1RAUBjmQzj4Iw1k8bHpA58QtCAIAgCAirUUKVtLQpukTxWGJlGBUhWBSQQUkbCAcOiAx/Wac9SKtN06aw3aVeU0vAZiQcMR0GA8UBpe4Lk7HW3u6BJN1naY6&#43;NjiN59uq41T8170SMV4OfZbwbj5d1C3ocoNe62qI64V4AgNp2fl0SlBpss2MEMyjTaRzAJAgPfAEAQBAEBla&#43;uXEveRVcMMHdycw2tpx7RAI0Bpe4Lk7HW3u6BJN1naY6&#43;NjiN59uq41T8170SMV4OfZbwbj5d1C3ocoNe62qI64V4AgNo2cnGqhQKbOMHFt&#43;VbcT5UgwEjAEAQBAEBlW&#43;mcROXjVUt4FLO5s4g6SlAx7cR5IBHgNL3BcnY6293QJJus7THXxscRvPt1XGqfmveiRivBz7LeDcfLuoW9DlBr3W1RHXCvAEBd9x94UtLSrdma2&#43;lnIUd4vuKwScT&#43;rJOjOc23DUMQvLHNAfYAgCAT7xbdyFjaUtSlodqbqSJaVBzk/5lcyR26IDKUzMOzcy7MzLhceeWXHFq0qUTiSfLAdUBpe4Lk7HW3u6BJN1naY6&#43;NjiN58uq41T8170SMV4OfZbwbj5d1DXocoNe62qI64V4C0LqKpZyqKbsraij09wTGKZWc3IIdyyeIpYz4nHMdOOaAX7zLFPWMrymEZblOfGXKPK1jWlXzh/TA64DlZu861VnmksS0/vmWSMEsTad0SkdB4w2AwGnLMTVQnrPyE3Vm2Wpx9lLrjbIISjKGIGcnURASkBny8W862NLtBUaGh2UkhLO5KXZZnw1IIBScVE4EpI0c8BU03NzE7MuTM4&#43;4&#43;&#43;4cVuuqKlKPSTAdMAQGl7guTsdbe7oEk3Wdpjr42OI3ny6rjVTzXvRIxXg59lvBuPl3UNehyg17raojrhXgObS1tOJcaWpDiCFJUk4FJGggwGnrH1&#43;hXm2XRJVhqXfnEIAm5VzMQsZt0RrAOnEaMcIDzi5Gx&#43;77oUz5RjjuW&#43;PB/pj2wFjoQG0JQkYJSMAOiA5QGYb&#43;kpTeLNEAAql2Sek5OHdAV3AEAQGl7guTsdbe7oEk3Wdpjr42OI3n26rjVPzXvRIxXg59lvBuPl3ULehyg17raojrhXgCA7ZeYelnkPSzq2nUHFDjailSTzgjRAMH5/wBrt77h&#43;cdSyMMMd3OV62ntgNcsfqG8TickadkB2QGYr&#43;&#43;USY6sz/5gK6gCAIDS9wXJ2Otvd0CSbrO0x18bHEbz5dWRlVMa8G/eiRi3Bz7LeDcfLuqm9&#43;xFek7RVOu7zL9NmXi7uzHh7kPnjSnRp0dMR1xWkAQBAEA7JvatylISmuEADADerP3ID7wt268en/iMfcgFmvVyo2hqKqhWJjfE0pISV5CU5hozJAEBHQBAeylUuerE6iTpco9NTK9DbSco7TzDpOaA1FdXZ2fstY1un1XckzJcW8pLa8oICsMxOjHZm6YMTsVrrO2OvjY4nef6pYqbp7&#43;/bNzTiVpzhkrwUNitewxGpYhYqRoXiOa5Ww23SnTu1rk5Um3Dku8ZK0cqtp1OZTqUEEfST3j0Rirh0Wo06E5x6M0cUmza0LxZyn1R9q7q7OWsZVUKG41ITbmcOywBZcPzkDQekYHbEy1ZtWZytRlKxYt2bcaVmc4UZayxVdsm/k1eTKWSrBEy14TS9itR6DgY&#43;X0XYAgCAIAgOxhlyYdQyw2tx1ZyUIQkqUo8wA0wFr2JuUqVQyJq07iqfLHAiWRgXljp1I7T0CAtVExZiwkkZGlSzTbmtlgYuLPOtR7zG1QudWv4x4R6tO836lQ8JnOfSEOXbR2yVg0nelOJ0gkII26V&#43;TNsiho3W5bfNa&#43;/pL0r3fp8PLZ&#43;/tPSdgaO1LpTM7rMO/tLyyn0ARq28SrzOceDdsYTd4s5Ws5k2RPU0fVqNIVdnc56XS5hxV6FJ2HVHrSr1KM52JeNa7068ZW4JM1Zqt2beVN2fmXH2dKmwPCI&#43;cnQraM8VLN7oXmNGvGU/d6PbuV4us6d3nOPT7te&#43;mWyptVYVIWglm2t0GQ4l1OUyvnCgdGw5umNevh1ux5qfjHX5bF2xSxb8tXyz0&#43;CpbK5On1FK52yb6ZN5Qyt7OEqZX9E5yntGyJyrE5qRr1Bqlnp0ydZk3ZV4aAsZljnSdBGyDKNgCAsOxN0ldtHuczPJNMp6sDur6P0ix81HecBtgLnpFBsjdzKhbDaRNqTgX3P0kw7z4cw6BgI9qNCpWnKxDwr3mlQjO3LwTFoK9ad5UrQmFy8voUsHA4fOXq2DPtinZut3usaVac5SLV7vN7nQoRlH3f/AImKFYWSkyl&#43;pETkxpySP0YOz9ry&#43;iNaviFS35bHlhtXfC6dOdKp5p6G5KQkAAAAZgBE9UfYAgCAMICErtmKbWgpT7W5zGp9rMry8/ljZoXurQ/rPh6NS83KjeP7R4&#43;pQVK2kscsrlnN908HFQAJRh0p0o2jNFHTut8/t5bX39pX8d7uM52fNZ&#43;/pMMVmztsZH8nVmVZKl/4eZAIJ50K5/QY0rxcatHx2x92qN2xGlX8Nk/divrS3EKXOpcszUW25Za/DYnMSWhrKVAeFsIB6TGk3zdZi7uy1hpdM/UFom51Gffc0BglX&#43;mjV2npj7sU7VSdGzGcvOpVsUrOlbnKHZUbZz9TmDJWalXMo5t1KcVkc4GhI6T2RUp3CnSjTvFrl928kepiNWra/ju9nnv&#43;Obvo9hVOu78tBMKfeVnLSVk4/SVpOwemPmtiOUaFCMo9fh90MLm1OneJzn0/2TrLS7MqylmXaQ00keChCcAIl2rU2pztTnKvZsWbEaNmModsYfQgCAIAgCAID5gOaAWK/Yqn1PKdlgJSYOfKQnwFHpT3jCN673&#43;rS8J8YTrzhtKt42fCS4J21dmP7G40ZppfgMKKS6MdWSRn/wBpjd/jud688TlO/c0P5L7dPJMaUbt/3m9EhZGqVp8TtpJpxAOhvEFeHNzJGzsj4t36lRjQu8c/u16U8PrV7WneLXL7sO9NpknTGNwkZdDSNeAznpJ0mJdSrbqzpW5zlXpUadGzo2Iyh7I83qIAgCAID/Z" alt="img"  /></a></p>
+<p>GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 <a class="link" href="https://zh.wikipedia.org/zh-cn/GitHub"  target="_blank" rel="noopener"
+    >维基百科</a></p>
+<p>wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。</p>
+<p>比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。</p>
+<p>网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。</p>
+<hr>
+<h4 id="注册github账号">注册github账号</h4>
+<p>访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。</p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fsEiTJ.png" alt="image-20210813205913353"  /></p>
+<p>接下来就是github的注册信息界面了，做的很漂亮，如果网络条件不好的话请多等待一下，或者挂上梯子再试试。这部分不予赘述，就是一个注册流程，也没啥限制的。</p>
+<p>完成注册后来到个人的首页。</p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fseY11.png" alt=""  /></p>
+<hr>
+<h4 id="仓库说明">仓库说明</h4>
+<p>有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New</p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fs3e1g.md.png" alt="fs3e1g.md.png"  /></p>
+<p><a class="link" href="https://imgtu.com/i/fs3au9"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fs3au9.md.png" alt="fs3au9.md.png"  /></a></p>
+<p>命名规范就是，仓库名一定是你的用户名加上.github.io，这是GitHub解析用户界面的强制要求。其它选项保持默认就可以了，不用管。我这里报红是因为我已经有这个仓库了，各位应该不会有啥问题，建好仓库后先把它撂在这不管，还有一些准备工作要做。</p>
+<hr>
+<hr>
+<h3 id="shell的准备">Shell的准备</h3>
+<h4 id="shell的介绍">Shell的介绍</h4>
+<p>什么是Shell呢？计算机在早期的时候是没有这么多花花绿绿的界面让你来用的，所有的操作都是通过shell（终端）来完成的，比如复制一个文件到另一个目录这样简单的操作，就需要在一个黑黑的窗体里完成，各位也许在Windows里接触过这个黑窗体，没错，CMD其实也是一个Shell（终端）。</p>
+<p>那你可能会问，为啥不做一个界面出来呢，不是会方便很多吗？首先是图形化的界面消耗的资源比较高，在服务器上大家早就习惯了一套命令式的交互，没有必要去做一套费力又不咋讨好的图形界面，所以很多软件都是没有图形化界面的，包括系统也是，Linux这类服务器系统大部分都没有做图形化界面的，当然你可以自己安装图形界面。再者就是对于熟练的程序员来说使用命令交互比图形界面快多了，等待图形界面加载的时候就已经使用节约数十倍的资源占用的终端完成操作了。</p>
+<hr>
+<h4 id="为什么要安装windowsterminal">为什么要安装WindowsTerminal</h4>
+<p>Windows的CMD不够用，丑（</p>
+<hr>
+<h4 id="下载以及安装">下载以及安装</h4>
+<p>有两种方式，最简单的，在开始菜单里打开你的Windows应用商店，搜索WindowsTerminal安装即可</p>
+<p><a class="link" href="https://imgtu.com/i/fsJEh6"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fsJEh6.png" alt="fsJEh6.png"  /></a></p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fsJI4x.md.png" alt="fsJI4x.md.png"  /></p>
+<p>或者你可以来到这个仓库的发行地址<a class="link" href="https://github.com/microsoft/terminal/releases/tag/v1.9.1942.0"  target="_blank" rel="noopener"
+    >下载WindowsTerminal</a>，翻到页面底部，下载第一个文件，下载下来直接双击即可，这个我记得是UWP应用形式的。</p>
+<p><a class="link" href="https://imgtu.com/i/fsY7on"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fsY7on.md.png" alt="fsY7on.md.png"  /></a></p>
+<p>完成安装过后可以按下<!-- raw HTML omitted -->Win<!-- raw HTML omitted -->+<!-- raw HTML omitted -->R<!-- raw HTML omitted -->打开运行窗口，输入wt回车即可打开Shell</p>
+<p><a class="link" href="https://imgtu.com/i/fstft1"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fstft1.png" alt="fstft1.png"  /></a></p>
+<p><a class="link" href="https://imgtu.com/i/fstz1f"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fstz1f.md.png" alt="fstz1f.md.png"  /></a></p>
+<p>也可以通过点击右键菜单里的WindowsTerminal选项在右键所点击的目录打开Shell</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/img1.b5397247e925a0b4ec79e0a03512e3bc_hu1883fd1680917f568a2e51295147733c_936413_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="" 
+                        data-hash="md5-tTlyR&#43;kloLTseeCgNRLjvA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">借助github以及hugo搭建静态的个人博客-1</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    
+    
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'darckrm-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 DarckLH的Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.0.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#环境准备">环境准备</a>
+      <ol>
+        <li><a href="#git的安装">Git的安装</a>
+          <ol>
+            <li><a href="#git简介">Git简介</a></li>
+            <li><a href="#git的下载和安装">Git的下载和安装</a></li>
+          </ol>
+        </li>
+        <li><a href="#github账号">Github账号</a>
+          <ol>
+            <li><a href="#github简介">Github简介</a></li>
+            <li><a href="#注册github账号">注册github账号</a></li>
+            <li><a href="#仓库说明">仓库说明</a></li>
+          </ol>
+        </li>
+        <li><a href="#shell的准备">Shell的准备</a>
+          <ol>
+            <li><a href="#shell的介绍">Shell的介绍</a></li>
+            <li><a href="#为什么要安装windowsterminal">为什么要安装WindowsTerminal</a></li>
+            <li><a href="#下载以及安装">下载以及安装</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

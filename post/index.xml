@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>所有文章 on DarckLH的Blog</title>
+    <link>http://www.rmdarck18.xyz:1313/post/</link>
+    <description>Recent content in 所有文章 on DarckLH的Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 14 Aug 2021 01:50:38 +0800</lastBuildDate><atom:link href="http://www.rmdarck18.xyz:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>欢迎访问本博客！</title>
+      <link>http://www.rmdarck18.xyz:1313/p/%E6%AC%A2%E8%BF%8E%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 14 Aug 2021 15:20:24 +0800</pubDate>
+      
+      <guid>http://www.rmdarck18.xyz:1313/p/%E6%AC%A2%E8%BF%8E%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>某首歌歌词</title>
+      <link>http://www.rmdarck18.xyz:1313/p/%E6%9F%90%E9%A6%96%E6%AD%8C%E6%AD%8C%E8%AF%8D/</link>
+      <pubDate>Fri, 13 Aug 2021 22:51:36 +0800</pubDate>
+      
+      <guid>http://www.rmdarck18.xyz:1313/p/%E6%9F%90%E9%A6%96%E6%AD%8C%E6%AD%8C%E8%AF%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Study</title>
+      <link>http://www.rmdarck18.xyz:1313/p/study/</link>
+      <pubDate>Fri, 13 Aug 2021 16:05:42 +0800</pubDate>
+      
+      <guid>http://www.rmdarck18.xyz:1313/p/study/</guid>
+      <description>一点学习心得</description>
+    </item>
+    
+    <item>
+      <title>MyLouiseProject API应用</title>
+      <link>http://www.rmdarck18.xyz:1313/p/mylouiseproject-api%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Fri, 13 Aug 2021 15:23:00 +0800</pubDate>
+      
+      <guid>http://www.rmdarck18.xyz:1313/p/mylouiseproject-api%E5%BA%94%E7%94%A8/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;基于Java jdk11，SpringBoot，MySQL实现的轻量API应用，主要是配合&lt;!-- raw HTML omitted --&gt;go-cqhttp&lt;!-- raw HTML omitted --&gt;的接口标准实现QQ群聊机器人&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

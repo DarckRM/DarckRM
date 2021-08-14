@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on DarckLH的Blog</title>
+    <link>http://www.rmdarck18.xyz:1313/categories/</link>
+    <description>Recent content in Categories on DarckLH的Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 13 Aug 2021 20:38:35 +0800</lastBuildDate><atom:link href="http://www.rmdarck18.xyz:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>教程分享</title>
+      <link>http://www.rmdarck18.xyz:1313/categories/%E6%95%99%E7%A8%8B%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Fri, 13 Aug 2021 20:38:35 +0800</pubDate>
+      
+      <guid>http://www.rmdarck18.xyz:1313/categories/%E6%95%99%E7%A8%8B%E5%88%86%E4%BA%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>开发心得</title>
+      <link>http://www.rmdarck18.xyz:1313/categories/%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Fri, 13 Aug 2021 15:23:00 +0800</pubDate>
+      
+      <guid>http://www.rmdarck18.xyz:1313/categories/%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>荒海拾贝</title>
+      <link>http://www.rmdarck18.xyz:1313/categories/%E8%8D%92%E6%B5%B7%E6%8B%BE%E8%B4%9D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.rmdarck18.xyz:1313/categories/%E8%8D%92%E6%B5%B7%E6%8B%BE%E8%B4%9D/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

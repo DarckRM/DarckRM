@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>DarckLH的Blog</title>
+        <link>http://www.rmdarck18.xyz:1313/</link>
+        <description>Recent content on DarckLH的Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sat, 14 Aug 2021 15:20:24 +0800</lastBuildDate><atom:link href="http://www.rmdarck18.xyz:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>欢迎访问本博客！</title>
+        <link>http://www.rmdarck18.xyz:1313/p/%E6%AC%A2%E8%BF%8E%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Sat, 14 Aug 2021 15:20:24 +0800</pubDate>
+        
+        <guid>http://www.rmdarck18.xyz:1313/p/%E6%AC%A2%E8%BF%8E%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;img src="http://www.rmdarck18.xyz:1313/p/%E6%AC%A2%E8%BF%8E%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%8D%9A%E5%AE%A2/mmexport1532947875714.jpg" alt="Featured image of post 欢迎访问本博客！" /&gt;</description>
+        </item>
+        <item>
+        <title>某首歌歌词</title>
+        <link>http://www.rmdarck18.xyz:1313/p/%E6%9F%90%E9%A6%96%E6%AD%8C%E6%AD%8C%E8%AF%8D/</link>
+        <pubDate>Fri, 13 Aug 2021 22:51:36 +0800</pubDate>
+        
+        <guid>http://www.rmdarck18.xyz:1313/p/%E6%9F%90%E9%A6%96%E6%AD%8C%E6%AD%8C%E8%AF%8D/</guid>
+        <description>&lt;p&gt;貴方のその美しい顔&lt;/p&gt;
+&lt;p&gt;你那张令人移不开眼的小脸啊&lt;/p&gt;
+&lt;p&gt;火傷を負った&lt;/p&gt;
+&lt;p&gt;如同火灾里遭了殃的&lt;/p&gt;
+&lt;p&gt;摩天楼&lt;/p&gt;
+&lt;p&gt;摩 天 楼&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>借助github以及hugo搭建静态的个人博客-0</title>
+        <link>http://www.rmdarck18.xyz:1313/p/personal_blog/</link>
+        <pubDate>Fri, 13 Aug 2021 20:38:35 +0800</pubDate>
+        
+        <guid>http://www.rmdarck18.xyz:1313/p/personal_blog/</guid>
+        <description>&lt;img src="http://www.rmdarck18.xyz:1313/p/personal_blog/head.jpg" alt="Featured image of post 借助github以及hugo搭建静态的个人博客-0" /&gt;&lt;p&gt;此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加邮件留言吧。。&lt;/p&gt;
+&lt;p&gt;第一篇主要是讲一些环境准备和需要的软件。&lt;/p&gt;
+&lt;h2 id=&#34;环境准备&#34;&gt;环境准备&lt;/h2&gt;
+&lt;p&gt;在正式开始上手前，我们需要做一些环境准备，何谓“环境&amp;quot;？&lt;/p&gt;
+&lt;p&gt;程序其实就像一种生物，鱼需要水，植物需要阳光，绝大部分动物都需要氧气，除了必备的生存条件之外还可以准备一些辅助的条件让生物更加满足，这些都可以称之为环境。这一部分主要是介绍搭建博客必要的环境，请准备好网络环境以及电脑。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git（必要，进行代码管理必不可少的工具）&lt;/li&gt;
+&lt;li&gt;Github（必要，这篇教程主要就是借助github代码托管实现个人博客）&lt;/li&gt;
+&lt;li&gt;Shell（Windows平台推荐WindowsTerminal）、&lt;/li&gt;
+&lt;li&gt;MarkDown编辑器（MarkDown是一种标记语言，写文章会用到）&lt;/li&gt;
+&lt;li&gt;善于思考的大脑和愿意付出行动的双手&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;git的安装&#34;&gt;Git的安装&lt;/h3&gt;
+&lt;h4 id=&#34;git简介&#34;&gt;Git简介&lt;/h4&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 &lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/zh-cn/Git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上面这堆谜语来自wiki，举例说明吧。&lt;/p&gt;
+&lt;p&gt;好比你装一台电脑，整个过程存在非常多的状态，甚至装完之后还需要升级维护之类的需求。如果中间出了问题就要拆掉已经装好的部分回到出错的状态重新来过，非常折磨！现在出现了这么一个工具，它可以记录下一个时空节点的所有信息，比如在你装好CPU，装好内存，装好显卡的每个结束时刻你都可以记录下这一时空节点，还可以带上一些你的辅助信息，说明为啥要记录这个节点以及在这个节点你都做了些什么。这样当你出现了什么问题的时候你可以快速的检查到底出啥问题了，甚至返回到之前的时空节点将其修复！是不是非常酷炫？这还不是最酷的，结合下文会讲到的Github，甚至可以做到让别人克隆你的时空节点记录，将他的时空记录和你的合并起来！真是令人激动。当然，Git的进一步使用就需要各位深入学习了，此处只是为了方便大家理解后面的命令都在做什么。&lt;/p&gt;
+&lt;h4 id=&#34;git的下载和安装&#34;&gt;Git的下载和安装&lt;/h4&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://git-scm.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fsMJLq.png&#34; alt=&#34;选择下载&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fsQWBq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fsQWBq.png&#34; alt=&#34;fsQWBq.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。&lt;/p&gt;
+&lt;p&gt;安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fslNPU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fslNPU.png&#34; alt=&#34;fslNPU.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;github账号&#34;&gt;Github账号&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;github简介&#34;&gt;Github简介&lt;/h4&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.com/search?q=github&amp;amp;newwindow=1&amp;amp;sxsrf=ALeKk01RkvU7wDBr6bJIViufne3czGa_CA:1628860226351&amp;amp;tbm=isch&amp;amp;source=iu&amp;amp;ictx=1&amp;amp;fir=AX0L-dlfxlIUiM%2CbubBm5TnvXiH4M%2C%2Fm%2F0ryppmg&amp;amp;vet=1&amp;amp;usg=AI4_-kSdwc918DJbXthiOoZoJM3C5MuDpg&amp;amp;sa=X&amp;amp;ved=2ahUKEwiqnLiZia7yAhVCfd4KHYx1DRgQ_B16BAh0EAI#imgrc=AX0L-dlfxlIUiM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;http://www.rmdarck18.xyz:1313/data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N/AABEIAIAAbAMBEQACEQEDEQH/xAAcAAACAwADAQAAAAAAAAAAAAAABgUHCAIDBAH/xABOEAABAgMDBQoJBwkJAQAAAAABAgMABAUGBxESITFBcRMUFzI3UWF0ocEiVYGDkZKTwuJWYnKj0dLhFRYjM0JFRqSxJENEUmOClKKyCP/EABoBAQEAAwEBAAAAAAAAAAAAAAAFAQQGAwL/xAAuEQEAAQEECAYCAwEAAAAAAAAAAQMCBAUREhUxQUKBocEhIlFS4fBikRMy0RT/2gAMAwEAAhEDEQA/AJGytmzaEzQE3vfcMn&amp;#43;7ysrHHpHNHSXu9/8APl4Z5uVudz/6dLxyyMHBsfG38v8AFGlrWfZ1b&amp;#43;po9/T5HBsfGp9h8UNaz7OpqaPf0&amp;#43;RwbHxt9R8UNa/h1NTR7&amp;#43;nyODY&amp;#43;Nj7D4oa1/Dqamj39PkcGx8bH2HxQ1r&amp;#43;HU1NHv6fI4Nj42PsPihrX8OpqaPf0&amp;#43;RwbHxsfYfFDWv4dTU0e/p8jg2PjX6j4ozrafZ1Y1NHv6fI4Nz41&amp;#43;o&amp;#43;KGtp9nVnU0e/p8jg3Pjb6j4oxrWfZ1NTR7&amp;#43;nyODY&amp;#43;NT7D4oa1n2dTU0e/p8virtyEk/lX&amp;#43;X&amp;#43;KM62/DqxODfn0&amp;#43;SFrO2LCGfrquNU/Ne9EfFeDn2XMG4&amp;#43;XdU94NuLUU62tZk5KuTjMuzNKS22leZI5hEdcL3CLbH5Qz3r/AIQBwi2x&amp;#43;UM96/4QBwi2x&amp;#43;UM96/4QBwi2x&amp;#43;UM96/4QBwjWx&amp;#43;UM964&amp;#43;yA5C8i2Q/iGc9I&amp;#43;yA&amp;#43;i8q2Y/iCb/6/ZAchebbQfxBNeqj7IDmL0bbD9/v&amp;#43;zb&amp;#43;7AfRepbcfv932LX3YC9roK3UrQWLE/WJpUzNGYcRuhSlOYYYDAACBKvDpO0x18bHEbz7dVxqn5r3okYrwc&amp;#43;y3g3Hy7qFvQ5Qa91tUR1wrwBAStBs3WLQqmE0WRcm1S6N0dSgjFKdAzE59gzwEc8y6w6tp9tTbrailaFpIUkjSCDoMB1wBAEBMJsvXDQna7&amp;#43;TH00tvDKmVDJSQSACMc6hiRnGIgIeAIDS9wXJ2Otvd0CSadJ2mOvjY4jefbquNU/Ne9EjFeDn2W8G4&amp;#43;XdQt6HKDXutqiOuFeAIC9f/AJp3He9eAw3fLZyufJwXh24wDjeNdpI2zdl5pDqZGeQoJdmEt5Rdb5iM2JGowEZJ3G2UYbwmHKhMr1qU8E9iQIDvcuTscpJCWp1B50zJzekQEdTLjaPI2hYnHZ12cprQyjKTCRitY0ZShgCnnGGrWIByvJDLd39eS4EpbEisJGgA4eD24QGRIAgNL3BcnY6293QJJus7THXxscRvPt1XGqfmveiRivBz7LeDcfLuoW9DlBr3W1RHXCvAEBpK4iyaKNZxNafyjO1RAUBjmQzj4Iw1k8bHpA58QtCAIAgCAirUUKVtLQpukTxWGJlGBUhWBSQQUkbCAcOiAx/Wac9SKtN06aw3aVeU0vAZiQcMR0GA8UBpe4Lk7HW3u6BJN1naY6&amp;#43;NjiN59uq41T8170SMV4OfZbwbj5d1C3ocoNe62qI64V4AgNp2fl0SlBpss2MEMyjTaRzAJAgPfAEAQBAEBla&amp;#43;uXEveRVcMMHdycw2tpx7RAI0Bpe4Lk7HW3u6BJN1naY6&amp;#43;NjiN59uq41T8170SMV4OfZbwbj5d1C3ocoNe62qI64V4AgNo2cnGqhQKbOMHFt&amp;#43;VbcT5UgwEjAEAQBAEBlW&amp;#43;mcROXjVUt4FLO5s4g6SlAx7cR5IBHgNL3BcnY6293QJJus7THXxscRvPt1XGqfmveiRivBz7LeDcfLuoW9DlBr3W1RHXCvAEBd9x94UtLSrdma2&amp;#43;lnIUd4vuKwScT&amp;#43;rJOjOc23DUMQvLHNAfYAgCAT7xbdyFjaUtSlodqbqSJaVBzk/5lcyR26IDKUzMOzcy7MzLhceeWXHFq0qUTiSfLAdUBpe4Lk7HW3u6BJN1naY6&amp;#43;NjiN58uq41T8170SMV4OfZbwbj5d1DXocoNe62qI64V4C0LqKpZyqKbsraij09wTGKZWc3IIdyyeIpYz4nHMdOOaAX7zLFPWMrymEZblOfGXKPK1jWlXzh/TA64DlZu861VnmksS0/vmWSMEsTad0SkdB4w2AwGnLMTVQnrPyE3Vm2Wpx9lLrjbIISjKGIGcnURASkBny8W862NLtBUaGh2UkhLO5KXZZnw1IIBScVE4EpI0c8BU03NzE7MuTM4&amp;#43;4&amp;#43;&amp;#43;4cVuuqKlKPSTAdMAQGl7guTsdbe7oEk3Wdpjr42OI3ny6rjVTzXvRIxXg59lvBuPl3UNehyg17raojrhXgObS1tOJcaWpDiCFJUk4FJGggwGnrH1&amp;#43;hXm2XRJVhqXfnEIAm5VzMQsZt0RrAOnEaMcIDzi5Gx&amp;#43;77oUz5RjjuW&amp;#43;PB/pj2wFjoQG0JQkYJSMAOiA5QGYb&amp;#43;kpTeLNEAAql2Sek5OHdAV3AEAQGl7guTsdbe7oEk3Wdpjr42OI3n26rjVPzXvRIxXg59lvBuPl3ULehyg17raojrhXgCA7ZeYelnkPSzq2nUHFDjailSTzgjRAMH5/wBrt77h&amp;#43;cdSyMMMd3OV62ntgNcsfqG8TickadkB2QGYr&amp;#43;&amp;#43;USY6sz/5gK6gCAIDS9wXJ2Otvd0CSbrO0x18bHEbz5dWRlVMa8G/eiRi3Bz7LeDcfLuqm9&amp;#43;xFek7RVOu7zL9NmXi7uzHh7kPnjSnRp0dMR1xWkAQBAEA7JvatylISmuEADADerP3ID7wt268en/iMfcgFmvVyo2hqKqhWJjfE0pISV5CU5hozJAEBHQBAeylUuerE6iTpco9NTK9DbSco7TzDpOaA1FdXZ2fstY1un1XckzJcW8pLa8oICsMxOjHZm6YMTsVrrO2OvjY4nef6pYqbp7&amp;#43;/bNzTiVpzhkrwUNitewxGpYhYqRoXiOa5Ww23SnTu1rk5Um3Dku8ZK0cqtp1OZTqUEEfST3j0Rirh0Wo06E5x6M0cUmza0LxZyn1R9q7q7OWsZVUKG41ITbmcOywBZcPzkDQekYHbEy1ZtWZytRlKxYt2bcaVmc4UZayxVdsm/k1eTKWSrBEy14TS9itR6DgY&amp;#43;X0XYAgCAIAgOxhlyYdQyw2tx1ZyUIQkqUo8wA0wFr2JuUqVQyJq07iqfLHAiWRgXljp1I7T0CAtVExZiwkkZGlSzTbmtlgYuLPOtR7zG1QudWv4x4R6tO836lQ8JnOfSEOXbR2yVg0nelOJ0gkII26V&amp;#43;TNsiho3W5bfNa&amp;#43;/pL0r3fp8PLZ&amp;#43;/tPSdgaO1LpTM7rMO/tLyyn0ARq28SrzOceDdsYTd4s5Ws5k2RPU0fVqNIVdnc56XS5hxV6FJ2HVHrSr1KM52JeNa7068ZW4JM1Zqt2beVN2fmXH2dKmwPCI&amp;#43;cnQraM8VLN7oXmNGvGU/d6PbuV4us6d3nOPT7te&amp;#43;mWyptVYVIWglm2t0GQ4l1OUyvnCgdGw5umNevh1ux5qfjHX5bF2xSxb8tXyz0&amp;#43;CpbK5On1FK52yb6ZN5Qyt7OEqZX9E5yntGyJyrE5qRr1Bqlnp0ydZk3ZV4aAsZljnSdBGyDKNgCAsOxN0ldtHuczPJNMp6sDur6P0ix81HecBtgLnpFBsjdzKhbDaRNqTgX3P0kw7z4cw6BgI9qNCpWnKxDwr3mlQjO3LwTFoK9ad5UrQmFy8voUsHA4fOXq2DPtinZut3usaVac5SLV7vN7nQoRlH3f/AImKFYWSkyl&amp;#43;pETkxpySP0YOz9ry&amp;#43;iNaviFS35bHlhtXfC6dOdKp5p6G5KQkAAAAZgBE9UfYAgCAMICErtmKbWgpT7W5zGp9rMry8/ljZoXurQ/rPh6NS83KjeP7R4&amp;#43;pQVK2kscsrlnN908HFQAJRh0p0o2jNFHTut8/t5bX39pX8d7uM52fNZ&amp;#43;/pMMVmztsZH8nVmVZKl/4eZAIJ50K5/QY0rxcatHx2x92qN2xGlX8Nk/divrS3EKXOpcszUW25Za/DYnMSWhrKVAeFsIB6TGk3zdZi7uy1hpdM/UFom51Gffc0BglX&amp;#43;mjV2npj7sU7VSdGzGcvOpVsUrOlbnKHZUbZz9TmDJWalXMo5t1KcVkc4GhI6T2RUp3CnSjTvFrl928kepiNWra/ju9nnv&amp;#43;Obvo9hVOu78tBMKfeVnLSVk4/SVpOwemPmtiOUaFCMo9fh90MLm1OneJzn0/2TrLS7MqylmXaQ00keChCcAIl2rU2pztTnKvZsWbEaNmModsYfQgCAIAgCAID5gOaAWK/Yqn1PKdlgJSYOfKQnwFHpT3jCN673&amp;#43;rS8J8YTrzhtKt42fCS4J21dmP7G40ZppfgMKKS6MdWSRn/wBpjd/jud688TlO/c0P5L7dPJMaUbt/3m9EhZGqVp8TtpJpxAOhvEFeHNzJGzsj4t36lRjQu8c/u16U8PrV7WneLXL7sO9NpknTGNwkZdDSNeAznpJ0mJdSrbqzpW5zlXpUadGzo2Iyh7I83qIAgCAID/Z&#34; alt=&#34;img&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 &lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/zh-cn/GitHub&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。&lt;/p&gt;
+&lt;p&gt;比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。&lt;/p&gt;
+&lt;p&gt;网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;注册github账号&#34;&gt;注册github账号&lt;/h4&gt;
+&lt;p&gt;访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fsEiTJ.png&#34; alt=&#34;image-20210813205913353&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;接下来就是github的注册信息界面了，做的很漂亮，如果网络条件不好的话请多等待一下，或者挂上梯子再试试。这部分不予赘述，就是一个注册流程，也没啥限制的。&lt;/p&gt;
+&lt;p&gt;完成注册后来到个人的首页。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fseY11.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;仓库说明&#34;&gt;仓库说明&lt;/h4&gt;
+&lt;p&gt;有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fs3e1g.md.png&#34; alt=&#34;fs3e1g.md.png&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fs3au9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fs3au9.md.png&#34; alt=&#34;fs3au9.md.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;命名规范就是，仓库名一定是你的用户名加上.github.io，这是GitHub解析用户界面的强制要求。其它选项保持默认就可以了，不用管。我这里报红是因为我已经有这个仓库了，各位应该不会有啥问题，建好仓库后先把它撂在这不管，还有一些准备工作要做。&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;shell的准备&#34;&gt;Shell的准备&lt;/h3&gt;
+&lt;h4 id=&#34;shell的介绍&#34;&gt;Shell的介绍&lt;/h4&gt;
+&lt;p&gt;什么是Shell呢？计算机在早期的时候是没有这么多花花绿绿的界面让你来用的，所有的操作都是通过shell（终端）来完成的，比如复制一个文件到另一个目录这样简单的操作，就需要在一个黑黑的窗体里完成，各位也许在Windows里接触过这个黑窗体，没错，CMD其实也是一个Shell（终端）。&lt;/p&gt;
+&lt;p&gt;那你可能会问，为啥不做一个界面出来呢，不是会方便很多吗？首先是图形化的界面消耗的资源比较高，在服务器上大家早就习惯了一套命令式的交互，没有必要去做一套费力又不咋讨好的图形界面，所以很多软件都是没有图形化界面的，包括系统也是，Linux这类服务器系统大部分都没有做图形化界面的，当然你可以自己安装图形界面。再者就是对于熟练的程序员来说使用命令交互比图形界面快多了，等待图形界面加载的时候就已经使用节约数十倍的资源占用的终端完成操作了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;为什么要安装windowsterminal&#34;&gt;为什么要安装WindowsTerminal&lt;/h4&gt;
+&lt;p&gt;Windows的CMD不够用，丑（&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;下载以及安装&#34;&gt;下载以及安装&lt;/h4&gt;
+&lt;p&gt;有两种方式，最简单的，在开始菜单里打开你的Windows应用商店，搜索WindowsTerminal安装即可&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fsJEh6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fsJEh6.png&#34; alt=&#34;fsJEh6.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fsJI4x.md.png&#34; alt=&#34;fsJI4x.md.png&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;或者你可以来到这个仓库的发行地址&lt;a class=&#34;link&#34; href=&#34;https://github.com/microsoft/terminal/releases/tag/v1.9.1942.0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载WindowsTerminal&lt;/a&gt;，翻到页面底部，下载第一个文件，下载下来直接双击即可，这个我记得是UWP应用形式的。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fsY7on&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fsY7on.md.png&#34; alt=&#34;fsY7on.md.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;完成安装过后可以按下&lt;!-- raw HTML omitted --&gt;Win&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;R&lt;!-- raw HTML omitted --&gt;打开运行窗口，输入wt回车即可打开Shell&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fstft1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fstft1.png&#34; alt=&#34;fstft1.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fstz1f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fstz1f.md.png&#34; alt=&#34;fstz1f.md.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;也可以通过点击右键菜单里的WindowsTerminal选项在右键所点击的目录打开Shell&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>借助github以及hugo搭建静态的个人博客-1</title>
+        <link>http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/</link>
+        <pubDate>Fri, 13 Aug 2021 20:38:35 +0800</pubDate>
+        
+        <guid>http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/</guid>
+        <description>&lt;img src="http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/img1.png" alt="Featured image of post 借助github以及hugo搭建静态的个人博客-1" /&gt;&lt;p&gt;还没写哦&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Study</title>
+        <link>http://www.rmdarck18.xyz:1313/p/study/</link>
+        <pubDate>Fri, 13 Aug 2021 16:05:42 +0800</pubDate>
+        
+        <guid>http://www.rmdarck18.xyz:1313/p/study/</guid>
+        <description>&lt;p&gt;一点学习心得&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>MyLouiseProject API应用</title>
+        <link>http://www.rmdarck18.xyz:1313/p/mylouiseproject-api%E5%BA%94%E7%94%A8/</link>
+        <pubDate>Fri, 13 Aug 2021 15:23:00 +0800</pubDate>
+        
+        <guid>http://www.rmdarck18.xyz:1313/p/mylouiseproject-api%E5%BA%94%E7%94%A8/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;基于Java jdk11，SpringBoot，MySQL实现的轻量API应用，主要是配合&lt;!-- raw HTML omitted --&gt;go-cqhttp&lt;!-- raw HTML omitted --&gt;的接口标准实现QQ群聊机器人&lt;/p&gt;
+&lt;h2 id=&#34;快速部署&#34;&gt;快速部署&lt;/h2&gt;
+&lt;h3 id=&#34;本地开发&#34;&gt;本地开发&lt;/h3&gt;
+&lt;h4 id=&#34;mylouiseapi部分&#34;&gt;MyLouiseAPI部分&lt;/h4&gt;
+&lt;p&gt;首先是准备开发环境，目前需要的运行环境有JDK11和MySQL8，在本地环境上安装好即可，在application.yml中配置相关的数据源以及数据源连接信息，这里推荐对配置文件进行加密。需要注意的是，这个项目是配合cqhttp一起使用的，是作为服务的API应用，因此还会有一些关于cqhttp的事项。&lt;/p&gt;
+&lt;h6 id=&#34;在applicationyml文件中&#34;&gt;在application.yml文件中&lt;/h6&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#服务器端口&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;spring&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#配置数据源&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;datasource&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;driver-class-name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;com.mysql.cj.jdbc.Driver&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#配置MybatisPlus&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mybatis-plus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;configuration&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#关闭表字段下划线自动转驼峰导致实体类字段无法匹配&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;map-underscore-to-camel-case&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mapper-locations&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;classpath*:xml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;global-config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;db-config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#表名前缀&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;table-prefix&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;t_&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Spring-Boot的标准配置，要说明的是Mybatis-Plus，为了简化和数据库的交互使用了Mybatis-Plus，具体的使用方法见官方文档，这里说一下这几条配置的原因&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;#关闭表字段下划线自动转驼峰导致实体类字段无法匹配&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;map-underscore-to-camel-case&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;假如你在数据库中的一张表内存在以下划线分割的字段，MybatisPlus会自动将查询结果字段以驼峰命名法去匹配你的实体类，如&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;字段名: user_createtime 匹配的实体类名: userCreatetime&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;#表名前缀&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;table-prefix&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;t_&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;MybatisPlus有一个BaseMapper接口，你可以将你写的Mapper继承自这个接口，这个接口会根据你传入的实体类作为泛型实现很多自动化的CURD操作，但是自动拼装的SQL语句中默认是以实体类来命名的，如&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;实体类名: User 自动生成的SQL语句: SELECT * FROM user&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;加上此条配置即可在自动生成的表名前加上前缀。&lt;/p&gt;
+&lt;p&gt;当然，具体的实现细节还有个人偏好就需要各位自行查看官方文档了。&lt;/p&gt;
+&lt;h6 id=&#34;在louiseconfigproperties文件中&#34;&gt;在LouiseConfig.properties文件中&lt;/h6&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;#Louise运行时加载一些默认配置&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#go-cqhttp监听地址&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;BASE_BOT_URL = cqhttp运行的URL以及端口号，在介绍cqhttp的部分会提到&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#go-cqhttp上报密钥&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;HTTP_POST_KEY = 在介绍cqhttp的部分会提到&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#Louise的一些报错信息&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;LOUISE.unknown_command = 没有听懂诶，如果需要帮助的话请说!help&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;LOUISE.thirdApi_request_failed = 露易兹请求第三方API失败了！&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#SourceNAO API相关&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;SOURCENAO_API = https://saucenao.com/search.php&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;SOURCENAO_API_KEY = 修改为你的SOURCENAO_API&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;SourceNAO是实现以图搜图的一个第三方API，因此想要实现搜图功能的话这条配置必不可少，当然，你也可以去选择其它的公共API调用，具体方法可以参考源码。&lt;/p&gt;
+&lt;p&gt;此项相关的配置项需要你自己去SourceNAO网站获取，流程简单，只需要注册即可获取到API，具体的请求响应参数可以阅读官方API帮助或者参考我写的代码（丑&lt;/p&gt;
+&lt;p&gt;注册：https://saucenao.com/user.php&lt;/p&gt;
+&lt;p&gt;API Key：https://saucenao.com/user.php?page=search-api&lt;/p&gt;
+&lt;h4 id=&#34;go-cqhttp部分&#34;&gt;GO-CQHTTP部分&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;注意，请先注册一个QQ账号，配置文件中会用到&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;基于 &lt;a class=&#34;link&#34; href=&#34;https://github.com/mamoe/mirai&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mirai&lt;/a&gt; 以及 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Mrs4s/MiraiGo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MiraiGo&lt;/a&gt; 的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/howmanybots/onebot/blob/master/README.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OneBot&lt;/a&gt; Golang 原生实现&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;项目地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Mrs4s/go-cqhttp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Mrs4s/go-cqhttp&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方文档 &lt;a class=&#34;link&#34; href=&#34;https://docs.go-cqhttp.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://docs.go-cqhttp.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于怎么部署这个项目官方文档写的非常清楚了，简单启动非常简单，我这里说一下配置文件和事件过滤器的相关事项。&lt;/p&gt;
+&lt;h6 id=&#34;配置文件&#34;&gt;配置文件&lt;/h6&gt;
+&lt;p&gt;其实官方提供的默认配置文件的注释说明了很多信息，但是有一些地方还是直观解释一下比较好。现在假设你已经跟着官方的快速开始完成bot的启动了，在bot的根目录下打开config.yml文件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;account&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 账号相关&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#这部分没啥好说的，官方config说明足够详细，就是encrypt最好保持false&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;heartbeat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# disabled: false # 是否开启心跳事件上报&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 心跳频率, 单位秒&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# -1 为关闭心跳&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;interval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;#推荐可以延长一点心跳的间隔时间 10s - 15s 都可以，最好别关&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;message&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 上报数据类型&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 可选: string,array&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 推荐选择string吧，API应用也可以直接解析成JSONObject对象（需要GSON依赖）（主要是我没试过array）&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;post-format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 是否忽略无效的CQ码, 如果为假将原样发送&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# CQ码实现建议看文档关于CQ码的介绍，可以理解成一种将你的信息解析成QQ可以理解的格式，或者直接指定一些QQ   # 的功能，举个栗子，发送请求JSON参数{&amp;#34;reply&amp;#34;:&amp;#34;[CQ:image, file=&amp;#34;url&amp;#34;]&amp;#34;}就可以在QQ里发送这个URL指   # 定的图片了，如果发送图片失败则会直接显示CQ码原文&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ignore-invalid-cqcode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 默认中间件锚点&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;default-middlewares&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&amp;amp;default&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 访问密钥, 强烈推荐在公网的服务器设置&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;access-token&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 事件过滤器文件目录&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 编写默认上报信息的过滤器，满足条件的消息才会上报到API应用&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;servers:  # HTTP 通信设置  - http:	  # 在API应用的application.yml中就需要填上这里的配置      # 服务端监听地址      host: 127.0.0.1      # 服务端监听端口      port: 5700      # 反向HTTP超时时间, 单位秒      # 最小值为5，小于5将会忽略本项设置      # 可以适当调高，如果API应用调用第三方接口耗时较长可能会导致bot一直无法成功请求服务      timeout: 5      middlewares:        &amp;lt;&amp;lt;: *default # 引用默认中间件      # 反向HTTP POST地址列表      # 这个就是说你的API应用监听的地址和端口，也就是bot接收到的消息或者是事件会上报给这个地方      # secret是bot的上报请求会带上一些加密的请求头参数，API应用可以根据这个来判断请求是否来自bot      # 具体算法见官方文档      post:      	url: &amp;#39;&amp;#39; # 地址      	secret&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;           &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 密钥&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h6 id=&#34;过滤器&#34;&gt;过滤器&lt;/h6&gt;
+&lt;p&gt;官方也有文档介绍过滤器如何配置，还有具体规则，这里还是举例说明&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;bot的目录结构 这是我自己的根据自己偏好更改&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;.├── go-cqhttp├── config.yml (旧版: config.hjson)├── device.json├── filter	└── filters.json├── logs│   └── xx-xx-xx.log└── data ├── images │   └── xxxx.image └── db
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;c&#34;&gt;# config.yml# 默认中间件锚点default-middlewares: &amp;amp;default# 事件过滤器文件目录# 编写默认上报信息的过滤器，满足条件的消息才会上报到API应用filter: &amp;#39;filter/filters.json&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;err&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;filter.json//&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;规则含义&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;允许上报以半角!开头或者meta_event_type为心跳检测的消息&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;&amp;#34;.or&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;         &lt;span class=&#34;nt&#34;&gt;&amp;#34;raw_message&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;             &lt;span class=&#34;nt&#34;&gt;&amp;#34;.regex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^!&amp;#34;&lt;/span&gt;         &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;         &lt;span class=&#34;nt&#34;&gt;&amp;#34;meta_event_type&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;heartbeat&amp;#34;&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;]}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;开发进度&#34;&gt;开发进度&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;监听群聊信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;发送随机图片&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2021年8月6日145139&#34;&gt;2021年8月6日14:51:39&lt;/h4&gt;
+&lt;p&gt;返回结果的简单封装&lt;/p&gt;
+&lt;h4 id=&#34;2021年8月7日220449&#34;&gt;2021年8月7日22:04:49&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;实现用户注册，未注册情况下不能调用功能&lt;/li&gt;
+&lt;li&gt;返回简单的帮助信息图片&lt;/li&gt;
+&lt;li&gt;初步接收上传文件上报的接口&lt;/li&gt;
+&lt;li&gt;加入MySQL&lt;/li&gt;
+&lt;/ol&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='简介 基于Java jdk11，SpringBoot，MySQL实现的轻量API应用，主要是配合go-cqhttp的接口标准实现QQ群聊机器人
+'><title>MyLouiseProject API应用</title>
+
+<link rel='canonical' href='http://www.rmdarck18.xyz:1313/p/mylouiseproject-api%E5%BA%94%E7%94%A8/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='MyLouiseProject API应用'>
+<meta property='og:description' content='简介 基于Java jdk11，SpringBoot，MySQL实现的轻量API应用，主要是配合go-cqhttp的接口标准实现QQ群聊机器人
+'>
+<meta property='og:url' content='http://www.rmdarck18.xyz:1313/p/mylouiseproject-api%E5%BA%94%E7%94%A8/'>
+<meta property='og:site_name' content='DarckLH的Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-08-13T15:23:00&#43;08:00'/><meta property='article:modified_time' content='2021-08-13T15:23:00&#43;08:00'/><meta property='og:image' content='http://www.rmdarck18.xyz:1313/' />
+<meta name="twitter:title" content="MyLouiseProject API应用">
+<meta name="twitter:description" content="简介 基于Java jdk11，SpringBoot，MySQL实现的轻量API应用，主要是配合go-cqhttp的接口标准实现QQ群聊机器人
+"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://www.rmdarck18.xyz:1313/' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="http://www.rmdarck18.xyz:1313" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/" style="background-color: #2a9d8f; color: #fff;">
+                开发心得
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/mylouiseproject-api%E5%BA%94%E7%94%A8/">MyLouiseProject API应用</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 13, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="简介">简介</h2>
+<p>基于Java jdk11，SpringBoot，MySQL实现的轻量API应用，主要是配合<!-- raw HTML omitted -->go-cqhttp<!-- raw HTML omitted -->的接口标准实现QQ群聊机器人</p>
+<h2 id="快速部署">快速部署</h2>
+<h3 id="本地开发">本地开发</h3>
+<h4 id="mylouiseapi部分">MyLouiseAPI部分</h4>
+<p>首先是准备开发环境，目前需要的运行环境有JDK11和MySQL8，在本地环境上安装好即可，在application.yml中配置相关的数据源以及数据源连接信息，这里推荐对配置文件进行加密。需要注意的是，这个项目是配合cqhttp一起使用的，是作为服务的API应用，因此还会有一些关于cqhttp的事项。</p>
+<h6 id="在applicationyml文件中">在application.yml文件中</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">server</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="c">#服务器端口</span><span class="w">
+</span><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> 
+</span><span class="w">
+</span><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="c">#配置数据源</span><span class="w">
+</span><span class="w">    </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">driver-class-name</span><span class="p">:</span><span class="w"> </span><span class="l">com.mysql.cj.jdbc.Driver</span><span class="w">
+</span><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> 
+</span><span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> 
+</span><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> 
+</span><span class="w">
+</span><span class="w"></span><span class="c">#配置MybatisPlus</span><span class="w">
+</span><span class="w"></span><span class="nt">mybatis-plus</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">configuration</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="c">#关闭表字段下划线自动转驼峰导致实体类字段无法匹配</span><span class="w">
+</span><span class="w">        </span><span class="nt">map-underscore-to-camel-case</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">    </span><span class="nt">mapper-locations</span><span class="p">:</span><span class="w"> </span><span class="l">classpath*:xml</span><span class="w">
+</span><span class="w">    </span><span class="nt">global-config</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">db-config</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="c">#表名前缀</span><span class="w">
+</span><span class="w">            </span><span class="nt">table-prefix</span><span class="p">:</span><span class="w"> </span><span class="l">t_</span><span class="w">
+</span></code></pre></div><p>Spring-Boot的标准配置，要说明的是Mybatis-Plus，为了简化和数据库的交互使用了Mybatis-Plus，具体的使用方法见官方文档，这里说一下这几条配置的原因</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c">#关闭表字段下划线自动转驼峰导致实体类字段无法匹配</span><span class="w">
+</span><span class="w"></span><span class="nt">map-underscore-to-camel-case</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></code></pre></div><p>假如你在数据库中的一张表内存在以下划线分割的字段，MybatisPlus会自动将查询结果字段以驼峰命名法去匹配你的实体类，如</p>
+<blockquote>
+<p>字段名: user_createtime 匹配的实体类名: userCreatetime</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c">#表名前缀</span><span class="w">
+</span><span class="w"></span><span class="nt">table-prefix</span><span class="p">:</span><span class="w"> </span><span class="l">t_</span><span class="w">
+</span></code></pre></div><p>MybatisPlus有一个BaseMapper接口，你可以将你写的Mapper继承自这个接口，这个接口会根据你传入的实体类作为泛型实现很多自动化的CURD操作，但是自动拼装的SQL语句中默认是以实体类来命名的，如</p>
+<blockquote>
+<p>实体类名: User 自动生成的SQL语句: SELECT * FROM user</p>
+</blockquote>
+<p>加上此条配置即可在自动生成的表名前加上前缀。</p>
+<p>当然，具体的实现细节还有个人偏好就需要各位自行查看官方文档了。</p>
+<h6 id="在louiseconfigproperties文件中">在LouiseConfig.properties文件中</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c">#Louise运行时加载一些默认配置</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c">#go-cqhttp监听地址</span><span class="w">
+</span><span class="w"></span><span class="l">BASE_BOT_URL = cqhttp运行的URL以及端口号，在介绍cqhttp的部分会提到</span><span class="w">
+</span><span class="w"></span><span class="c">#go-cqhttp上报密钥</span><span class="w">
+</span><span class="w"></span><span class="l">HTTP_POST_KEY = 在介绍cqhttp的部分会提到</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c">#Louise的一些报错信息</span><span class="w">
+</span><span class="w"></span><span class="l">LOUISE.unknown_command = 没有听懂诶，如果需要帮助的话请说!help</span><span class="w">
+</span><span class="w"></span><span class="l">LOUISE.thirdApi_request_failed = 露易兹请求第三方API失败了！</span><span class="w">
+</span><span class="w"></span><span class="c">#SourceNAO API相关</span><span class="w">
+</span><span class="w"></span><span class="l">SOURCENAO_API = https://saucenao.com/search.php</span><span class="w">
+</span><span class="w"></span><span class="l">SOURCENAO_API_KEY = 修改为你的SOURCENAO_API</span><span class="w">
+</span></code></pre></div><p>SourceNAO是实现以图搜图的一个第三方API，因此想要实现搜图功能的话这条配置必不可少，当然，你也可以去选择其它的公共API调用，具体方法可以参考源码。</p>
+<p>此项相关的配置项需要你自己去SourceNAO网站获取，流程简单，只需要注册即可获取到API，具体的请求响应参数可以阅读官方API帮助或者参考我写的代码（丑</p>
+<p>注册：https://saucenao.com/user.php</p>
+<p>API Key：https://saucenao.com/user.php?page=search-api</p>
+<h4 id="go-cqhttp部分">GO-CQHTTP部分</h4>
+<p><strong>注意，请先注册一个QQ账号，配置文件中会用到</strong></p>
+<p><em>基于 <a class="link" href="https://github.com/mamoe/mirai"  target="_blank" rel="noopener"
+    >Mirai</a> 以及 <a class="link" href="https://github.com/Mrs4s/MiraiGo"  target="_blank" rel="noopener"
+    >MiraiGo</a> 的 <a class="link" href="https://github.com/howmanybots/onebot/blob/master/README.md"  target="_blank" rel="noopener"
+    >OneBot</a> Golang 原生实现</em></p>
+<p>项目地址 <a class="link" href="https://github.com/Mrs4s/go-cqhttp"  target="_blank" rel="noopener"
+    >https://github.com/Mrs4s/go-cqhttp</a></p>
+<p>官方文档 <a class="link" href="https://docs.go-cqhttp.org/"  target="_blank" rel="noopener"
+    >https://docs.go-cqhttp.org/</a></p>
+<p>关于怎么部署这个项目官方文档写的非常清楚了，简单启动非常简单，我这里说一下配置文件和事件过滤器的相关事项。</p>
+<h6 id="配置文件">配置文件</h6>
+<p>其实官方提供的默认配置文件的注释说明了很多信息，但是有一些地方还是直观解释一下比较好。现在假设你已经跟着官方的快速开始完成bot的启动了，在bot的根目录下打开config.yml文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">account</span><span class="p">:</span><span class="w"> </span><span class="c"># 账号相关</span><span class="w">
+</span><span class="w"></span><span class="c">#这部分没啥好说的，官方config说明足够详细，就是encrypt最好保持false</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">heartbeat</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="c"># disabled: false # 是否开启心跳事件上报</span><span class="w">
+</span><span class="w">  </span><span class="c"># 心跳频率, 单位秒</span><span class="w">
+</span><span class="w">  </span><span class="c"># -1 为关闭心跳</span><span class="w">
+</span><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">
+</span><span class="w"></span><span class="c">#推荐可以延长一点心跳的间隔时间 10s - 15s 都可以，最好别关</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">message</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="c"># 上报数据类型</span><span class="w">
+</span><span class="w">  </span><span class="c"># 可选: string,array</span><span class="w">
+</span><span class="w">  </span><span class="c"># 推荐选择string吧，API应用也可以直接解析成JSONObject对象（需要GSON依赖）（主要是我没试过array）</span><span class="w">
+</span><span class="w">  </span><span class="nt">post-format</span><span class="p">:</span><span class="w"> </span><span class="l">string</span><span class="w">
+</span><span class="w">  </span><span class="c"># 是否忽略无效的CQ码, 如果为假将原样发送</span><span class="w">
+</span><span class="w">  </span><span class="c"># CQ码实现建议看文档关于CQ码的介绍，可以理解成一种将你的信息解析成QQ可以理解的格式，或者直接指定一些QQ   # 的功能，举个栗子，发送请求JSON参数{&#34;reply&#34;:&#34;[CQ:image, file=&#34;url&#34;]&#34;}就可以在QQ里发送这个URL指   # 定的图片了，如果发送图片失败则会直接显示CQ码原文</span><span class="w">
+</span><span class="w">  </span><span class="nt">ignore-invalid-cqcode</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># 默认中间件锚点</span><span class="w">
+</span><span class="w"></span><span class="nt">default-middlewares</span><span class="p">:</span><span class="w"> </span><span class="cp">&amp;default</span><span class="w">
+</span><span class="w">  </span><span class="c"># 访问密钥, 强烈推荐在公网的服务器设置</span><span class="w">
+</span><span class="w">  </span><span class="nt">access-token</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">
+</span><span class="w">  </span><span class="c"># 事件过滤器文件目录</span><span class="w">
+</span><span class="w">  </span><span class="c"># 编写默认上报信息的过滤器，满足条件的消息才会上报到API应用</span><span class="w">
+</span><span class="w">  </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">servers:  # HTTP 通信设置  - http:	  # 在API应用的application.yml中就需要填上这里的配置      # 服务端监听地址      host: 127.0.0.1      # 服务端监听端口      port: 5700      # 反向HTTP超时时间, 单位秒      # 最小值为5，小于5将会忽略本项设置      # 可以适当调高，如果API应用调用第三方接口耗时较长可能会导致bot一直无法成功请求服务      timeout: 5      middlewares:        &lt;&lt;: *default # 引用默认中间件      # 反向HTTP POST地址列表      # 这个就是说你的API应用监听的地址和端口，也就是bot接收到的消息或者是事件会上报给这个地方      # secret是bot的上报请求会带上一些加密的请求头参数，API应用可以根据这个来判断请求是否来自bot      # 具体算法见官方文档      post:      	url: &#39;&#39; # 地址      	secret</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">           </span><span class="c"># 密钥</span><span class="w">
+</span></code></pre></div><h6 id="过滤器">过滤器</h6>
+<p>官方也有文档介绍过滤器如何配置，还有具体规则，这里还是举例说明</p>
+<blockquote>
+<p>bot的目录结构 这是我自己的根据自己偏好更改</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">.├── go-cqhttp├── config.yml (旧版: config.hjson)├── device.json├── filter	└── filters.json├── logs│   └── xx-xx-xx.log└── data ├── images │   └── xxxx.image └── db
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># config.yml# 默认中间件锚点default-middlewares: &amp;default# 事件过滤器文件目录# 编写默认上报信息的过滤器，满足条件的消息才会上报到API应用filter: &#39;filter/filters.json&#39;</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">//</span> <span class="err">filter.json//</span> <span class="err">规则含义</span> <span class="err">允许上报以半角!开头或者meta_event_type为心跳检测的消息</span><span class="p">{</span> <span class="nt">&#34;.or&#34;</span> <span class="p">:</span>  <span class="p">[</span>     <span class="p">{</span>         <span class="nt">&#34;raw_message&#34;</span><span class="p">:</span> <span class="p">{</span>             <span class="nt">&#34;.regex&#34;</span><span class="p">:</span> <span class="s2">&#34;^!&#34;</span>         <span class="p">}</span>     <span class="p">},</span>      <span class="p">{</span>         <span class="nt">&#34;meta_event_type&#34;</span><span class="p">:</span> <span class="s2">&#34;heartbeat&#34;</span>     <span class="p">}</span> <span class="p">]}</span>
+</code></pre></div></blockquote>
+<h2 id="开发进度">开发进度</h2>
+<ol>
+<li>
+<p>监听群聊信息</p>
+</li>
+<li>
+<p>发送随机图片</p>
+</li>
+</ol>
+<h4 id="2021年8月6日145139">2021年8月6日14:51:39</h4>
+<p>返回结果的简单封装</p>
+<h4 id="2021年8月7日220449">2021年8月7日22:04:49</h4>
+<ol>
+<li>实现用户注册，未注册情况下不能调用功能</li>
+<li>返回简单的帮助信息图片</li>
+<li>初步接收上传文件上报的接口</li>
+<li>加入MySQL</li>
+</ol>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 DarckLH的Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.0.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#快速部署">快速部署</a>
+      <ol>
+        <li><a href="#本地开发">本地开发</a>
+          <ol>
+            <li><a href="#mylouiseapi部分">MyLouiseAPI部分</a></li>
+            <li><a href="#go-cqhttp部分">GO-CQHTTP部分</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#开发进度">开发进度</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#2021年8月6日145139">2021年8月6日14:51:39</a></li>
+            <li><a href="#2021年8月7日220449">2021年8月7日22:04:49</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
