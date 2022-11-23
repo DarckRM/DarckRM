@@ -1,0 +1,21 @@
+name: Netease Recent Actions
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '00 22 * * 0'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: zonemeen/netease-recent-actions@latest # 使用最新版本，最新版本查看https://github.com/marketplace/actions/netease-recent-actions
+        with:
+          id: '249920296' # 你的网易云音乐账号id
+          size: 60
+          show_percent: '1'
