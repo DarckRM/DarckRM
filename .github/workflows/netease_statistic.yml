@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: zonemeen/netease-recent-actions@v1.0.26 # 使用最新版本，最新版本查看https://github.com/marketplace/actions/netease-recent-actions
+      - uses: zonemeen/netease-recent-actions@v1.0.33 # 使用最新版本，最新版本查看https://github.com/marketplace/actions/netease-recent-actions
         with:
           id: '249920296' # 你的网易云音乐账号id
           size: 60
