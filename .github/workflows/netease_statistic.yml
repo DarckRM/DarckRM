@@ -2,12 +2,11 @@ name: Netease Recent Actions
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "main" ]
   schedule:
     - cron: '00 22 * * 0'
-  on: workflow_dispatch
 
 jobs:
   build:
