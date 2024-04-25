@@ -1,11 +1,11 @@
-### Hi there 👋
+## Hi there 👋
+<img style="display: inline" src="./163.svg">
 
-Welcome to my Github profile!
+## Blog 💬
+https://blog.rmdarck.icu/
 
-Plz check the link below
+## Title as divider 🍜
+<img src="https://lights.rmdarck.icu/img/53fc6fd9c750e23a6d4472d92a247385.png" />
 
-Now I'm working on
-
-<img style="display: line" align="left" src="https://github-readme-stats.vercel.app/api?username=DarckRM&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=true" />
-<img style="display: inline" align="right" src="./163.svg">
-<img style="display: inline; width: 500px" align="left" src="https://s2.loli.net/2022/04/13/A85Zwv6u1beEDYt.png" >
+## W(R)IP 🛠
+<img style="width: 500px" src="https://s2.loli.net/2022/04/13/A85Zwv6u1beEDYt.png" >
