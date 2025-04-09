@@ -5,7 +5,7 @@ Edit somethin...
 ## Blog 💬
 https://blog.rmdarck.icu/
 
-## Vistor Count 🍜
+## Visitor Count 🍜
 <img src="https://count.getloli.com/@akarin_moe?name=akarin_moe&theme=moebooru&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" >
 
 ## W(R)IP 🛠
